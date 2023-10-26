@@ -16,4 +16,4 @@ imbalanced-learn
 git+https://github.com/stefmolin/login-attempt-simulator.git@2nd_edition
 git+https://github.com/stefmolin/ml-utils.git@2nd_edition
 git+https://github.com/stefmolin/stock-analysis.git@2nd_edition
-Data_Analysis//Anilisis_de_datos//visual-aids
+./visual-aids
