@@ -1,0 +1,23 @@
+graphviz
+ipympl
+jupyterlab
+matplotlib
+pandas
+requests
+numpy
+scikit-learn
+scipy
+seaborn
+sqlalchemy
+statsmodels
+wheel
+python-dotenv
+imbalanced-learn
+git+https://github.com/stefmolin/login-attempt-simulator.git@2nd_edition
+git+https://github.com/stefmolin/ml-utils.git@2nd_edition
+git+https://github.com/stefmolin/stock-analysis.git@2nd_edition
+<<<<<<< HEAD:Data_Analysis/Anilisis_de_datos/requirements.txt
+./visual-aids
+=======
+./visual-aids
+>>>>>>> upstream/main:Data_Analysis/Analisis_de_datos/requirements.txt
