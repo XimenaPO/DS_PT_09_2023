@@ -163,3 +163,4 @@ cython_debug/
 Prof/
 Practicas/
 data_analisis/
+.venv_new/

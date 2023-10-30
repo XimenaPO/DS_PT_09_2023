@@ -37,9 +37,9 @@ def run_checks(raise_exc=False):
     else:
         print(FAIL, 'Se requiere una versión de Python >= 3.7.4 y < 3.12.1, pero %s está instalado.\n' % sys.version)
         failures.append('Python')
-
+    print(os.getcwd())
     # leer los requisitos
-    with open(r'..\requirements.txt', 'r') as file:
+    with open('../requirements.txt', 'r') as file:
         requirements = {}
         for line in file.read().splitlines():
             github_package = re.search(github_package_pattern, line)
