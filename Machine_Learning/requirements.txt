@@ -1,0 +1,6 @@
+scikit-learn
+statsmodels
+torch
+torchvision
+torchaudio
+tensorflow
