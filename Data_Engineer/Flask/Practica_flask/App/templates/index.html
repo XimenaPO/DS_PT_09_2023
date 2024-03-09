@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a la API de Iris</title>
+    <style>
+        body {
+            background-image: url('https://previews.123rf.com/images/joyfuldesigns/joyfuldesigns1303/joyfuldesigns130300022/18457620-este-es-un-collage-de-texturas-flores-de-iris-barbudo-y-japon%C3%A9s-iris-un-conjunto-de-3-en-un-fondo.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: rgb(247, 243, 243);
+            text-align: center;
+            padding: 50px;
+        }
+        .texto-fondo {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #botonSaludar, #botonPrediccion {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+        }
+        #botonSaludar:hover, #botonPrediccion:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="texto-fondo">
+        <h1>Bienvenido a la API de Iris</h1>
+        <p>¡Hola! Esta API te permite explorar el dataset Iris y hacer predicciones sobre las especies de flores.</p>
+        <p>Selecciona una opción:</p>
+        <button id="botonSaludar" onclick="user()">Saludar</button>
+        <button id="botonPrediccion" onclick="predict()">Hacer Predicción</button>
+    </div>
+    <script>
+        function user() {
+            window.location.href = '/user/' + prompt('Ingresa tu nombre');
+        }
+
+        function predict() {
+            var a = parseFloat(prompt('Ingresa el valor de a'));
+            var b = parseFloat(prompt('Ingresa el valor de b'));
+            var c = parseFloat(prompt('Ingresa el valor de c'));
+            var d = parseFloat(prompt('Ingresa el valor de d'));
+
+            // Realizar una solicitud POST a la ruta '/predict' de tu aplicación Flask
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({a: a, b: b, c: c, d: d})
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert('La predicción es ' + data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
